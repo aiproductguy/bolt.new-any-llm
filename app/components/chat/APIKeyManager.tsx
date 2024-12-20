@@ -62,17 +62,19 @@ export const APIKeyManager: React.FC<APIKeyManagerProps> = ({ provider, apiKey, 
               </IconButton>
               <div className="flex items-center gap-2">
                 <div className="i-ph:hash text-sm" />
-                <input
-                  type="text"
-                  placeholder="NameTag"
-                  className="px-1.5 py-0.5 text-xs rounded border border-bolt-elements-borderColor bg-bolt-elements-prompt-background text-bolt-elements-textPrimary focus:outline-none focus:ring-1 focus:ring-bolt-elements-focus w-16"
-                />
-                <div className="i-ph:slashes text-sm" />
-                <input
-                  type="text"
-                  placeholder="Space"
-                  className="px-1.5 py-0.5 text-xs rounded border border-bolt-elements-borderColor bg-bolt-elements-prompt-background text-bolt-elements-textPrimary focus:outline-none focus:ring-1 focus:ring-bolt-elements-focus w-14"
-                />
+                <div className="flex items-center">
+                  <input
+                    type="text"
+                    placeholder="NameTag"
+                    className="px-1.5 py-0.5 text-xs rounded-l border border-r-0 border-bolt-elements-borderColor bg-bolt-elements-prompt-background text-bolt-elements-textPrimary focus:outline-none focus:ring-1 focus:ring-bolt-elements-focus w-20"
+                  />
+                  <span className="px-0.5 border-y border-bolt-elements-borderColor bg-bolt-elements-prompt-background text-bolt-elements-textSecondary text-xs">/</span>
+                  <input
+                    type="text"
+                    placeholder="Space"
+                    className="px-1.5 py-0.5 text-xs rounded-r border border-l-0 border-bolt-elements-borderColor bg-bolt-elements-prompt-background text-bolt-elements-textPrimary focus:outline-none focus:ring-1 focus:ring-bolt-elements-focus w-14"
+                  />
+                </div>
               </div>
             </>
           )}
