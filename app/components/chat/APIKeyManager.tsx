@@ -55,18 +55,26 @@ export const APIKeyManager: React.FC<APIKeyManagerProps> = ({ provider, apiKey, 
       ) : (
         <>
           {provider?.getApiKeyLink && (
-            <IconButton className="ml-auto" onClick={() => window.open(provider?.getApiKeyLink)} title="Edit API Key">
-              <span className="mr-2 text-xs lg:text-sm">{provider?.labelForGetApiKey || 'Get API Key'}</span>
+            <>
+              <IconButton className="ml-auto mr-2" onClick={() => window.open(provider?.getApiKeyLink)} title="Edit API Key">
+                <span className="mr-2 text-xs lg:text-sm">{provider?.labelForGetApiKey || 'Get API Key'}</span>
+                <div className={provider?.icon || 'i-ph:key'} />
+              </IconButton>
               <div className="flex items-center gap-2">
+                <div className="i-ph:hash text-sm" />
                 <input
                   type="text"
                   placeholder="NameTag"
-                  className="px-2 py-1 text-xs rounded border border-bolt-elements-borderColor bg-bolt-elements-prompt-background text-bolt-elements-textPrimary focus:outline-none focus:ring-2 focus:ring-bolt-elements-focus w-24"
+                  className="px-1.5 py-0.5 text-xs rounded border border-bolt-elements-borderColor bg-bolt-elements-prompt-background text-bolt-elements-textPrimary focus:outline-none focus:ring-1 focus:ring-bolt-elements-focus w-16"
                 />
-                <div className="i-ph:hash" />
+                <div className="i-ph:slashes text-sm" />
+                <input
+                  type="text"
+                  placeholder="Space"
+                  className="px-1.5 py-0.5 text-xs rounded border border-bolt-elements-borderColor bg-bolt-elements-prompt-background text-bolt-elements-textPrimary focus:outline-none focus:ring-1 focus:ring-bolt-elements-focus w-14"
+                />
               </div>
-              <div className={provider?.icon || 'i-ph:key'} />
-            </IconButton>
+            </>
           )}
         </>
       )}
